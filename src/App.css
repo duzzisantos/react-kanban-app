@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+.container{
+  height: 556px;
+  width: 100%;
+  padding-top: 100px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+}
+
+#scheduled, #doing, #done{
+  height: 80px;
+  width: 18%;
+  background-color: #EFF6E0;
+  color: #231F20;
+  text-align: left;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+#expand{
+  height: 80px;
+  width: 18%;
+  background-color: none;
+  color: #679699e8;
+  text-align: left;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-indent: 10px;
+}
+
+h4{
+  margin-top: 0px;
+  color: #679699e8;
+  margin-left: 10px;
+}
+#scheduled{
+  margin-left: 20px;
+  height: fit-content;
+}
+
+#scheduled textarea, #doing textarea, #done textarea, #expand textarea{
+  display: block;
+  margin: 5px;
+  width: 93%;
+  height: 40px;
+  border: 1px solid transparent;
+  box-shadow: 1px 1px 1px 1px #EFF6E0;
+  border-radius: 5px;
+}
+
+.wrapper, .doing-wrapper, .done-wrapper{
+  display: block;
+  margin: 5px;
+  width: 93%;
+  height: 50px;
+  border: 1px solid transparent;
+  box-shadow: 1px 1px 1px 1px #EFF6E0;
+  border-radius: 5px;
+  background-color: blue;
+}
+
+.scheduled textarea::-ms-expand{
+  height: 0px;
+  width: 0px;
+}
+
+ #btn-add, #btn-remove, #btn-expand, #new-add-btn, #new-remove-btn {
+  width: 30px;
+  height: 30px;
+  margin-top: 0px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: rgb(56, 56, 56);
+  color: #EFF6E0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-bottom: 4px;
+}
+
+#new-add-btn, #new-remove-btn{
+  margin-top: 46px;
+  display: inline-block;
+}
+
+#new-add-btn{
+  margin-left: 0px;
+}
+
+#btn-expand{
+  margin-top: 6px;
+  background-color: rgb(56, 56, 56);
+  color: #EFF6E0;
+}
+
+
+nav {
+  height: 100px;
+  background-color: rgb(56, 56, 56);
+  margin-bottom: 35px;
+  width: 100%;
+  /*change made here*/
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  top: 0px;
+  position: fixed;
+  margin-left: 0px;
+}
+
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  font-weight: 700;
+  margin-left: 30px;
+}
+
+nav ul {
+  float: right;
+  /* margin-right: 53%; */
+  width: fit-content;
+  margin-left: 4%;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 15px;
+  margin-top: -10px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 17.5px;
+  text-decoration-line: none;
+}
+
+li:nth-child(5) { /*AKA THE THEME BUTTONS NIGHT AND DAY MODE: THIS LI TAG is the parent THE TWO BUTTONS*/
+  margin-left: -300px;
+}
+
+#night-mode-btn, #day-mode-btn{ /* These buttons change the theme of the web page when clicked. They are children of the li:nth-child(5) above*/
+  height: 35px;
+  padding: 3px;
+  background-color: rgb(56, 56, 56);
+  color: #EFF6E0;
+  font-size: 20px;
+  box-shadow: 1px 1px 1px 1px #231F20;
+}
+
+#night-mode-btn{
+  margin-left: 300px;
+  margin-top: 0px;
+}
+nav ul li a:hover {
+  color: #93cbcee8;
+  background: none;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+
+
+
+
+
+  /*COLLAPSIBLE NAVBAR*/
+  
+  @media (max-width: 952px) {
+    label.logo {
+      font-size: 40px;
+      padding-left: 50px;
+    }
+    nav ul li a {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 856px) {
+    .checkbtn {
+      display: block;
+    }
+    .checkbtn i {
+      margin-left: 250px;
+    }
+    nav ul {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background-color: rgb(77, 74, 74);
+      top: 80px;
+      left: -180%;
+      text-align: center;
+      transition: all 0.5s;
+      display: block;
+      margin-left: 0px;
+    }
+    nav ul li {
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+      margin-left: -10%;
+    }
+
+    li:nth-child(5) {
+      margin-left: -70%;
+    }
+    nav ul li a {
+      font-size: 20px;
+    }
+    a:hover,
+    a.active {
+      background: none;
+      color: #a7acaf;
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }
+    label.logo {
+      margin-left: auto;
+    }
+  }
