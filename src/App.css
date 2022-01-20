@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-*{
-  font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
 }
 
-.container{
-  height: 556px;
+.container {
+  height: 557px;
   width: 100%;
   padding-top: 100px;
   background-color: #ffffff;
@@ -13,94 +15,368 @@
   flex-direction: row;
 }
 
-#scheduled, #doing, #done{
+#scheduled {
   height: 80px;
-  width: 18%;
-  background-color: #EFF6E0;
-  color: #231F20;
+  width: 100%;
+  background-color: whitesmoke;
+  color: #231f20;
   text-align: left;
   margin: 5px;
   border-radius: 5px;
+  margin-left: 0px;
 }
 
-#expand{
-  height: 80px;
-  width: 18%;
-  background-color: none;
-  color: #679699e8;
+#doing,
+#done,
+#add-board,
+#expand {
+  height: 550px;
+  width: 100%;
+  background-color: transparent;
+  color: #231f20;
   text-align: left;
   margin: 5px;
   border-radius: 5px;
-  font-weight: 600;
-  text-indent: 10px;
+  margin-left: 0px;
 }
 
-h4{
-  margin-top: 0px;
-  color: #679699e8;
-  margin-left: 10px;
+#main-wrapper1,
+#main-wrapper2,
+#main-wrapper3,
+#main-wrapper4 {
+  width: 22%;
+  height: 550px;
+  margin: 5px;
+  overflow: hidden;
 }
-#scheduled{
-  margin-left: 20px;
+
+#board-title1,
+#board-title2,
+#board-title3,
+#board-title4,
+#board-title {
+  width: 230px;
+  margin-left: 18px;
+  color: #949494;
+  font-weight: 500;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+#title-wrap1,
+#title-wrap2,
+#title-wrap3 {
+  width: 100%;
+  background-color: whitesmoke;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#title-wrap4 {
+  width: 100%;
+  background-color: whitesmoke;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#scheduled {
+  margin-left: 0px;
   height: fit-content;
 }
 
-#scheduled textarea, #doing textarea, #done textarea, #expand textarea{
+#scheduled textarea,
+#doing textarea,
+#done textarea,
+#main-wrapper4 textarea {
   display: block;
   margin: 5px;
-  width: 93%;
-  height: 40px;
+  margin-top: 3px;
+  width: 94.5%;
+  height: 30px;
   border: 1px solid transparent;
-  box-shadow: 1px 1px 1px 1px #EFF6E0;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.105);
+  border-radius: 5px;
+  outline: none;
+  font-weight: 500;
+  font-size: 12px;
+  color: #a7acaf;
+  resize: none;
+  text-indent: 7px;
+}
+#doing .textarea-wrap,
+#done .textarea-wrap,
+#add-board .textarea-wrap {
+  display: block;
+  margin: 5px;
+  height: 80px;
+  background-color: rgb(253, 252, 252);
   border-radius: 5px;
 }
 
-.wrapper, .doing-wrapper, .done-wrapper{
+#scheduled .textarea-wrap {
+  display: block;
+  margin: 5px;
+  height: 80px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#scheduled .textarea-wrap:hover {
+  background-color: rgb(253, 252, 252);
+}
+
+.doing-holder {
+  height: 120px;
+  width: fit-content;
+  background-color: #a7acaf;
+  border: 1px solid white;
+}
+
+.new-doing-drop-div,
+.new-done-drop-div {
+  height: 80px;
+  display: block;
+  width: 97%;
+  background-color: rgb(236, 255, 255);
+  margin: 5px;
+}
+/* .wrapper,
+.doing-wrapper,
+.done-wrapper {
   display: block;
   margin: 5px;
   width: 93%;
   height: 50px;
   border: 1px solid transparent;
-  box-shadow: 1px 1px 1px 1px #EFF6E0;
+  box-shadow: 1px 1px 1px 1px #eff6e0;
   border-radius: 5px;
   background-color: blue;
-}
+} */
 
-.scheduled textarea::-ms-expand{
+.scheduled textarea::-ms-expand {
   height: 0px;
   width: 0px;
 }
 
- #btn-add, #btn-remove, #btn-expand, #new-add-btn, #new-remove-btn {
+#btn-add,
+#btn-expand {
   width: 30px;
   height: 30px;
-  margin-top: 0px;
+  margin-top: 10px;
   font-size: 20px;
   font-weight: 600;
-  background-color: rgb(56, 56, 56);
-  color: #EFF6E0;
-  border: 1px solid transparent;
+  background-color: transparent;
+  color: #231f20;
+  border: 1px solid #a7acaf;
   border-radius: 5px;
   margin-left: 10px;
   margin-bottom: 4px;
 }
 
-#new-add-btn, #new-remove-btn{
-  margin-top: 46px;
+#btn-expand {
+  color: #a7acaf;
+  border: 1px solid #a7acaf;
+  margin-left: 1px;
+}
+
+.timer-btn {
+  width: fit-content;
+  padding: 3px;
+  background-color: transparent;
+  color: #a7acaf;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  margin-left: 11.5px;
+  text-align: left;
+  position: relative;
+}
+
+.card-delete-btn {
+  width: 30px;
+  padding: 3px;
+  margin-left: 1%;
+  color: #a7acaf;
+  background-color: transparent;
+  font-size: 12px;
+  text-align: center;
+  border: none;
+}
+
+.card-save-btn {
+  padding: 2px;
+  font-size: 12px;
+  width: 50px;
+  margin-left: 1%;
+  background-color: transparent;
+  color: cornflowerblue;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  font-weight: 500;
+}
+.card-delete-btn:hover {
+  color: orangered;
+  cursor: pointer;
+  border: 1px solid #a7acaf;
+  border-radius: 5px;
+}
+
+.timer-btn:hover {
+  color: cornflowerblue;
+  outline-color: #a7acaf;
+  outline: 1px solid cornflowerblue;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  margin-left: 5%;
+}
+.card-save-btn:hover {
+  border: 1px solid #949494;
+  color: #a7acaf;
+  cursor: pointer;
+}
+
+.options-btn-scheduled,
+.options-btn-doing,
+.options-btn-done,
+.options-btn-expand,
+.options-btn-addnew {
   display: inline-block;
+  margin-left: 20px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 22px;
 }
 
-#new-add-btn{
-  margin-left: 0px;
+.options-btn-scheduled:hover,
+.options-btn-doing:hover,
+.options-btn-done:hover,
+.options-btn-expand:hover,
+.options-btn-addnew:hover {
+  background-color: none;
+  border-radius: 2px;
+  color: #949494;
+  cursor: pointer;
 }
 
-#btn-expand{
-  margin-top: 6px;
-  background-color: rgb(56, 56, 56);
-  color: #EFF6E0;
+.menuOptions,
+.menuOptions1,
+.menuOptions2,
+.menuOptions3 {
+  height: 400px;
+  width: 250px;
+  background-color: rgb(254, 254, 255);
+  margin-left: 28%;
+  margin-top: 35px;
+  position: absolute;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  color: #a7acaf;
+  overflow: hidden;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.105);
 }
 
+.menuOptions1 {
+  margin-left: 5%;
+}
 
+.menuOptions2 {
+  margin-left: 50.5%;
+}
+
+.menuOptions3 {
+  margin-left: 53%;
+}
+#menuTitle {
+  margin-left: 10%;
+}
+
+.menuSpan {
+  text-align: center;
+  margin-left: 10%;
+}
+
+.menuClose {
+  padding: 1px;
+  padding-left: 5px;
+  margin-left: 40%;
+  width: 40px;
+  font-size: 11px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #a7acaf;
+  border-radius: 5px;
+}
+
+.menuClose:hover {
+  border: 1px solid #949494;
+  cursor: pointer;
+}
+
+#label1,
+#label2,
+#label3,
+#label4 {
+  margin-left: 10%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+#input2,
+#input3 {
+  margin-left: 40%;
+}
+
+#input1 {
+  margin-left: 42%;
+}
+
+#input4 {
+  width: 80px;
+  margin-left: 31%;
+  margin-top: 2px;
+}
+
+#anchor1,
+#anchor2,
+#anchor3,
+#anchor4 {
+  margin-left: 10%;
+  margin-top: 10px;
+  text-align: left;
+  display: block;
+  text-decoration-line: none;
+  color: #a7acaf;
+}
+
+#anchor4 {
+  /*delete button*/
+  border-radius: 5px;
+  border: 1px solid #a7acaf;
+  background-color: transparent;
+  color: #a7acaf;
+  padding: 7px;
+  font-weight: 500;
+}
+
+#anchor4:hover {
+  border: 1px solid #949494;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#myhr1,
+#myhr2 {
+  border: 1px solid whitesmoke;
+  width: 70%;
+  border-radius: 10px;
+}
 nav {
   height: 100px;
   background-color: rgb(56, 56, 56);
@@ -143,22 +419,34 @@ nav ul li a {
   text-decoration-line: none;
 }
 
-li:nth-child(5) { /*AKA THE THEME BUTTONS NIGHT AND DAY MODE: THIS LI TAG is the parent THE TWO BUTTONS*/
-  margin-left: -300px;
+li:nth-child(5) {
+  /*AKA THE THEME BUTTONS NIGHT AND DAY MODE: THIS LI TAG is the parent THE TWO BUTTONS*/
+  margin-left: 0px;
 }
 
-#night-mode-btn, #day-mode-btn{ /* These buttons change the theme of the web page when clicked. They are children of the li:nth-child(5) above*/
+#night-mode-btn,
+#day-mode-btn {
+  /* These buttons change the theme of the web page when clicked. They are children of the li:nth-child(5) above*/
   height: 35px;
-  padding: 3px;
-  background-color: rgb(56, 56, 56);
-  color: #EFF6E0;
+  padding: 4px;
+  background-color: transparent;
+  color: #eff6e0;
   font-size: 20px;
-  box-shadow: 1px 1px 1px 1px #231F20;
+  border: none;
+  margin: 3px;
 }
 
-#night-mode-btn{
-  margin-left: 300px;
+#night-mode-btn {
+  margin-left: 50px;
   margin-top: 0px;
+}
+
+#day-mode-btn:hover {
+  color: orange;
+}
+
+#night-mode-btn:hover {
+  color: cornflowerblue;
 }
 nav ul li a:hover {
   color: #93cbcee8;
@@ -179,64 +467,129 @@ nav ul li a:hover {
   display: none;
 }
 
+/*COLLAPSIBLE NAVBAR*/
 
-
-
-
-
-  /*COLLAPSIBLE NAVBAR*/
-  
-  @media (max-width: 952px) {
-    label.logo {
-      font-size: 40px;
-      padding-left: 50px;
-    }
-    nav ul li a {
-      font-size: 16px;
-    }
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 40px;
+    padding-left: 50px;
   }
-  
-  @media (max-width: 856px) {
-    .checkbtn {
-      display: block;
-    }
-    .checkbtn i {
-      margin-left: 250px;
-    }
-    nav ul {
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      background-color: rgb(77, 74, 74);
-      top: 80px;
-      left: -180%;
-      text-align: center;
-      transition: all 0.5s;
-      display: block;
-      margin-left: 0px;
-    }
-    nav ul li {
-      display: block;
-      margin: 50px 0;
-      line-height: 30px;
-      margin-left: -10%;
-    }
-
-    li:nth-child(5) {
-      margin-left: -70%;
-    }
-    nav ul li a {
-      font-size: 20px;
-    }
-    a:hover,
-    a.active {
-      background: none;
-      color: #a7acaf;
-    }
-    #check:checked ~ ul {
-      left: 0;
-    }
-    label.logo {
-      margin-left: auto;
-    }
+  nav ul li a {
+    font-size: 16px;
   }
+  .options-btn-scheduled,
+  .options-btn-doing,
+  .options-btn-done,
+  .options-btn-expand,
+  .options-btn-addnew {
+    margin-left: 10px;
+  }
+  #board-title1,
+  #board-title2,
+  #board-title3,
+  #board-title4,
+  #board-title {
+    width: 140px;
+    font-size: 13px;
+  }
+  .textarea-wrap {
+    font-size: 13px;
+  }
+  .timer-btn,
+  .card-save-btn,
+  .card-delete-btn {
+    font-size: 8px;
+  }
+  .menuOptions,
+.menuOptions1,
+.menuOptions2,
+.menuOptions3{
+  font-size: 12px;
+  width: 190px;
+  height: 350px;
+}
+#input2,
+#input3 {
+  margin-left: 32%;
+}
+
+#input1 {
+  margin-left: 34%;
+}
+
+#input4 {
+  width: 80px;
+  margin-left: 18.5%;
+  margin-top: 2px;
+}
+}
+
+@media (max-width: 856px) {
+  .checkbtn {
+    display: block;
+  }
+  .checkbtn {
+    margin-left: 20px;
+  }
+  nav ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(77, 74, 74);
+    top: 80px;
+    left: -180%;
+    text-align: center;
+    transition: all 0.5s;
+    display: block;
+    margin-left: 0px;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+    margin-left: -10%;
+  }
+
+  li:nth-child(5) {
+    margin-left: -15%;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #a7acaf;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+  label.logo {
+    margin-left: auto;
+  }
+  .options-btn-scheduled,
+  .options-btn-doing,
+  .options-btn-done,
+  .options-btn-expand,
+  .options-btn-addnew {
+    margin-left: 10px;
+  }
+  #board-title1,
+  #board-title2,
+  #board-title3,
+  #board-title4,
+  #board-title {
+    width: 130px;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .textarea-wrap {
+    font-size: 13px;
+  }
+  .timer-btn,
+  .card-save-btn,
+  .card-delete-btn {
+    font-size: 8px;
+  }
+}
+
