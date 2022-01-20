@@ -1,0 +1,30 @@
+import {ReflectThemeChange} from './menu-parameters';
+import { handleExpandMenu } from './4-menu-options';
+import { DragEnter, DragStart, DropEvent, DragOver } from './components';
+
+export const handleAddNewBoard = () => {
+    let containerMenuDisplay = document.querySelector(".container");
+    let addBoard = document.createElement("div");
+    addBoard.id = "add-board";
+    let addInput = document.createElement("input");
+    addInput.id = "board-title";
+    addInput.placeholder = "Title";
+    addInput.spellcheck = false;
+    let addNewButton = document.createElement("button");
+    addNewButton.className = "options-btn-addnew";
+    addNewButton.innerText = "...";
+    addNewButton.onclick = handleExpandMenu;
+    let mainwrapper4 = document.createElement("div");
+    mainwrapper4.id = "main-wrapper4";
+    mainwrapper4.ondragenter = DragEnter;
+    mainwrapper4.ondrop = DropEvent;
+    mainwrapper4.ondragstart = DragStart;
+    mainwrapper4.ondragover = DragOver;
+    let titleWrap4 = document.createElement("div");
+    titleWrap4.id = "title-wrap4";
+    titleWrap4.append(addInput, addNewButton);
+    addBoard.appendChild(titleWrap4);
+    mainwrapper4.appendChild(addBoard);
+    containerMenuDisplay.append(mainwrapper4);
+    ReflectThemeChange();
+  };
