@@ -1,0 +1,114 @@
+import "./components";
+import {options} from './menu-parameters';
+import {ReflectThemeChange} from './menu-parameters';
+
+export function handleDoingMenu() {
+  //This can be redone
+  let containerMenuDisplay = document.querySelector(".container");
+  let menuOptions = document.createElement("div");
+  menuOptions.className = "menuOptions";
+  let menuSpan = document.createElement("span");
+  menuSpan.className = "menuSpan";
+  menuSpan.innerText = options[1].span;
+  let menuClose = document.createElement("button");
+  menuClose.className = "menuClose";
+  menuClose.innerText = "Close";
+  let menuTitle = document.createElement("p");
+  menuTitle.id = "menuTitle";
+  menuTitle.innerText = options[1].paragraph;
+  let label1 = document.createElement("label");
+  label1.innerText = options[1].label1;
+  let label2 = document.createElement("label");
+  label2.innerText = options[1].label2;
+  let label3 = document.createElement("label");
+  label3.innerText = options[1].label3;
+  let label4 = document.createElement("label");
+  label4.innerText = options[1].brightness;
+  label1.id = "label1";
+  label2.id = "label2";
+  label3.id = "label3";
+  label4.id = "label4";
+  label1.htmlFor = "input1";
+  label2.htmlFor = "input2";
+  label3.htmlFor = "input3";
+  label4.htmlFor = "input4";
+
+  let input1 = document.createElement("input");
+  input1.type = "radio";
+  input1.id = "input1";
+  input1.name = "themes";
+  let input2 = document.createElement("input");
+  input2.type = "radio";
+  input2.id = "input2";
+  input2.name = "themes";
+  let input3 = document.createElement("input");
+  input3.type = "radio";
+  input3.id = "input3";
+  input3.name = "themes";
+  let input4 = document.createElement("input");
+  input4.type = "radio";
+  input4.id = "input4";
+  input4.name = "themes";
+
+  let myHr1 = document.createElement("hr");
+  myHr1.id = "myhr1";
+  let myHr2 = document.createElement("hr");
+  myHr2.id = "myhr2";
+
+  let anchor1 = document.createElement("a");
+  anchor1.href = "https://google.de";
+  anchor1.innerText = options[1].otherProjects;
+  anchor1.id = "anchor1";
+  let anchor2 = document.createElement("a");
+  anchor2.innerText = options[1].newProject;
+  anchor2.href = "https://google.de";
+  anchor2.id = "anchor2";
+  let anchor3 = document.createElement("a");
+  anchor3.href = "https://google.de";
+  anchor3.innerText = options[1].report;
+  anchor3.id = "anchor3";
+  let anchor4 = document.createElement("button");
+  anchor4.href = "https://google.de";
+  anchor4.innerText = options[1].deleteBoard;
+  anchor4.id = "anchor4";
+
+  let mainwrapper2 = document.getElementById("main-wrapper2");
+  anchor4.addEventListener("click", (e) => {
+    e.preventDefault();
+    containerMenuDisplay.removeChild(menuOptions);
+    containerMenuDisplay.removeChild(mainwrapper2);
+  });
+
+  let partOne = document.createElement("div");
+  partOne.id = "partOne";
+
+  let partTwo = document.createElement("div");
+  partTwo.id = "partTwo";
+
+  let partThree = document.createElement("div");
+  partThree.id = "partThree";
+  partOne.append(menuSpan, menuClose, myHr1);
+  partTwo.append(
+    menuTitle,
+    label1,
+    input1,
+    label2,
+    input2,
+    label3,
+    input3,
+    label4,
+    input4
+  );
+
+  partThree.append(myHr2, anchor1, anchor2, anchor3, anchor4);
+  menuOptions.append(partOne, partTwo, partThree);
+
+  containerMenuDisplay.style.position = "relative";
+  containerMenuDisplay.append(menuOptions);
+
+  menuClose.addEventListener("click", (e) => {
+    e.preventDefault();
+    containerMenuDisplay.removeChild(menuOptions);
+  });
+  ReflectThemeChange();
+}
