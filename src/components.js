@@ -41,7 +41,6 @@ export const Container = () => {
   );
 };
 
-//Global declaration of our divs and delete button
 
 const ScheduledTasks = () => {
   //App function htmlFor scheduled tasks
@@ -167,6 +166,7 @@ const DoingTasks = () => {
             autoCorrect="on"
             autoComplete="off"
           ></input>
+          <BoardDeleteButton/>
           <button
             type="button"
             className="options-btn-doing"
@@ -181,7 +181,6 @@ const DoingTasks = () => {
 };
 
 const DoneTasks = () => {
-  //App function htmlFor done tasks
   return (
     <div
       id="main-wrapper3"
@@ -200,6 +199,7 @@ const DoneTasks = () => {
             autoCorrect="on"
             autoComplete="off"
           ></input>
+          <BoardDeleteButton/>
           <button
             type="button"
             className="options-btn-done"
