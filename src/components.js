@@ -290,3 +290,40 @@ export function DropEvent(event) {
 export function DragLeave(event) {
   event.preventDefault();
 }
+
+
+const handleBoardDeleteButton = () => {
+  const wrapper2 = document.getElementById("main-wrapper2");
+  const wrapper3 = document.getElementById("main-wrapper3");
+
+ 
+  const container = document.querySelector(".container");
+  const boardDelete = document.querySelectorAll(".board-delete-btn");
+
+  const doing = document.getElementById("doing");
+  const done = document.getElementById("done");
+
+  for (let i = 0; i < boardDelete.length; i++) {
+        boardDelete[i].addEventListener("click", (e) => {
+          e.preventDefault();
+          if (container.contains(wrapper2, doing)) {
+            container.removeChild(wrapper2);
+          } else if (container.contains(wrapper3,done)) {
+            container.removeChild(wrapper3);
+          }
+        });
+      }
+};
+
+const BoardDeleteButton = () => {
+  return (
+    <button
+      type="button"
+      className="board-delete-btn"
+      onClick={handleBoardDeleteButton}
+      style={{color: "cornflowerblue", border: "none", backgroundColor: "transparent"}}
+    >
+      <FontAwesomeIcon icon={faTimes}/>
+    </button>
+  );
+};
